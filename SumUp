@@ -6,12 +6,19 @@ Tech stack: Java 11, Tomcat 9.0.71, Spring 5.
 
 This SumUp file continuous with Section 12.
 
-Section 12
+Section 12 Controllers and Views, Model
 
-@Controller anotacija uždedama virš klasės. @RequestMappin("/") nuoroda į kitą puslapį ir naudojam return, kuris bus naudojamas programos
+@Controller anotacija uždedama virš klasės. @RequestMapping("/") nuoroda į kitą puslapį ir naudojam return, kuris bus naudojamas programos
 kaip žymę kurį jsp file atidaryti. Jsp file <form action="".. nurodome /.. kuris nuris nurodo metodą controller'yje. Suteikus input name
 , pastarąjį galime panaudoti kaip value ${param.YourElementName) (ex helloworld-form.jsp). MOdel naudojam kaip data transfer ir jsp faile
 pateikiam ${SomeName}. NOrint panaudoti model ir gauti bei perduoti informacija, sukuriamas metodas, kur yra 2 arguments
 (HttpServletRequest, Model). HttpServletRequest naudojamas gauti info su metodu .getParameter("YourElementName)". Atlikus norimus veiksmus
 su gauta informacija, perduoti informacij1 atgal į view naudojam model metodą .addAttribute("SomeName", results(<-your variable name)(žr.13-14 eil).
 Žiūrėti pavyzdį HelloWorldController, helloworld.jsp.
+
+Section 13 Request Params and Request Mappings
+
+Kad nereikėtų naudoti HttpServletRequest ir "sutaupyti" laiko bei kodo, galima naudoti @RequestParams anotacij1(Spring'o). Ši anotacija įdedama
+metodo argumente -> methodName(@RequestParam("ElementName") VariableType VariableName, Model model).
+Jeigu naudojami du controller'iai, kur @RequestMapping(sutrumpinimas RM) yra toks pats, tuomet kažkuriame Controller'yje naudojamas parent @RequestMapping, kuris
+nurodomas virš klasės kartu su @Controller anotacija. Tuomet path bus toks /parentRM/chlidRM.
