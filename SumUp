@@ -1,0 +1,7 @@
+There is a continuation of the repository 'ForLearningPurpose'. Because this project use Java 11 and Spring 5 it was
+necessary to create new repository. Later on, repository "ForLearningPurpose" will be used again.
+
+Tech stack: Java 11, Tomcat 9.0.71, Spring 5.
+.jsp is used instead of html just for learning purpose, although it is a legacy
+
+Section 12
