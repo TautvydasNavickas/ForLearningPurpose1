@@ -14,7 +14,6 @@ public class StudentController {
     @RequestMapping("/showForm")
     public String showForm(Model model) {
         Student student = new Student();
-        student.setFirstName("Povilas");
         model.addAttribute("student", student);
 
         return "student-form";
