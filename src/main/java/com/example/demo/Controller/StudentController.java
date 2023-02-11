@@ -14,6 +14,7 @@ public class StudentController {
     @RequestMapping("/showForm")
     public String showForm(Model model) {
         Student student = new Student();
+        student.setFirstName("Povilas");
         model.addAttribute("student", student);
 
         return "student-form";
@@ -21,7 +22,7 @@ public class StudentController {
 
     @RequestMapping("/processForm")
     public String processForm(@ModelAttribute("student") Student student) {
-        System.out.println("Student :" + student.getFirstName() + " and " + student.getLastName());
+        System.out.println("Student :" + student.getFirstName() + " and " + student.getLastName()+ " and " + student.getCountry()+ " and " + student.getOptionsOfCountry());
         return "student-confirmation";
     }
 
