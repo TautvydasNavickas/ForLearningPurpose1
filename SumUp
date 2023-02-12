@@ -22,3 +22,7 @@ Kad nereikėtų naudoti HttpServletRequest ir "sutaupyti" laiko bei kodo, galima
 metodo argumente -> methodName(@RequestParam("ElementName") VariableType VariableName, Model model).
 Jeigu naudojami du controller'iai, kur @RequestMapping(sutrumpinimas RM) yra toks pats, tuomet kažkuriame Controller'yje naudojamas parent @RequestMapping, kuris
 nurodomas virš klasės kartu su @Controller anotacija. Tuomet path bus toks /parentRM/chlidRM.
+
+Section 14 Form tags and data binding
+
+Žiūrėti student-confirmation, student-form file. Pastebėjas, kad get/set yra būtina, kuomet naudojamas submit formatas. užsiloadinus formatui iškviečiamas get metodas.Atlikus submit - set metodas.

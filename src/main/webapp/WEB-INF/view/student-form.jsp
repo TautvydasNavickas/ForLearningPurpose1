@@ -37,6 +37,6 @@
   MS Windows <form:checkbox path="operatingSystem" value="MS Window"/>
   <br><br>
 <input type="submit" value="Submit"/>
-
+</form:form>
 </body>
 </html>
