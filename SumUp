@@ -27,7 +27,7 @@ Section 14 Form tags and data binding
 
 Žiūrėti student-confirmation, student-form file. Pastebėjas, kad get/set yra būtina, kuomet naudojamas submit formatas. užsiloadinus formatui iškviečiamas get metodas.Atlikus submit - set metodas.
 
-Section 15
+Section 15 Spring MVC Form Validation - Applying Built-In Validation Rules
 
 Norint apriboti kurį nors field, virš jo galima uždėti anotaciją @NotNull @Size (žr. customer). Vėliau, controller pacakge įterpiame @Valid
 anotacija, kuri nusko atlikti validaciją visam objektui . Taip pat įterpiama BindingResult class, kuri laiko informaciją(erro) apie valdicaiją bei binding.
