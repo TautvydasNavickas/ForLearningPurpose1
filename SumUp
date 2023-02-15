@@ -35,3 +35,11 @@ Prieš tai esančios validacijos neapsaugo nuo "space" problemos. Tam naudojamas
 @InitBinder anotacija, kuri palaiko validacijos bei indentifikuoja WEbDataBinder metodus. TUomet kaip parametras naudojamas WebDataBidner, kuris susieja puslapio užklausų informaciją su beans.
 Sukuriamas StringTrimmerEditor, kuris panaikina trailing bei leading "space". Iškviečias webdatabidner metodas registercustomeditor, kuris pritaiko tam tikrus formato pakitimus tik tam tikram laukui ar formatui
 , šiuo atveju( String ir naudojam stringtimmereditor).
+
+Section 16 Spring MVC form validation - validating number ranges and regular expressions.
+
+Norint įvesti apribojimus skaičiams, rašome anotacijas NotNull, Min, Max. Norint
+patikrinti ar not null, reikia naudoti Integer, o ne int. Norint apsisaugoti nuo string įvedimo į number,
+override error klaidą į aiškesnę. Tam sukuriame messages.properties , kur pradžia typeMismatc(a must).
+Toliau spring-mvc-demo-servlet sukuriame bean ir kad skanuotų iš messages.properties.
+Norint įvesti Regular Expressions apribojimą - naudojame @Pattern ir regex.{} <- nurodytas skaičius nusako raidžių/skaičių kiekį.(pvz:(regexp="^[a-zA-Z0-9]{5}", message = "only 5 chars/digits"))
