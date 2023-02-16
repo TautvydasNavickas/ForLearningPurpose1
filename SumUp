@@ -64,3 +64,6 @@ Section 18 Introduction to hibernate
 
 Hibernate background'e naudoja jdbc. Palengvina komunikaciją tarp paleisto apps'o bei DB. Taip pat, hibernate suteikia object-to-relational mapping (ORM)
 
+Section 19 Setting up hibernate development environment
+
+Connection name = DriverManager.getConnection(url, user, pass) <- naudojamas prisijungti prie mysql. Visgi, bus naudojamas hibernate.cfg.xml
