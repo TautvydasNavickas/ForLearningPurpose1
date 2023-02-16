@@ -1,41 +1,39 @@
 package com.example.demo.Entity;
 
-import java.util.LinkedHashMap;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "student")
 public class Student {
-
+    @Id
+    @Column(name = "id")
+    private int id;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
-    private String country;
-    private LinkedHashMap<String ,String> optionsOfCountry;
-    private String favoriteLanguage;
-    private String[] operatingSystem;
+    @Column(name = "email")
+    private String email;
+
     public Student() {
-        optionsOfCountry = new LinkedHashMap<>();
-        optionsOfCountry.put("LT","Lithuania");
-        optionsOfCountry.put("EN","England");
-        optionsOfCountry.put("LV","Latvia");
-        optionsOfCountry.put("PL","Polands");
-        optionsOfCountry.put("US","United States");
+
     }
 
-    public String getFavoriteLanguage() {
-        return favoriteLanguage;
+    public Student(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
-    public String getCountry() {
-        return country;
+    public int getId() {
+        return id;
     }
 
-    public LinkedHashMap<String, String> getOptionsOfCountry() {
-        return optionsOfCountry;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-    public void setFavoriteLanguage(String favoriteLanguage) {
-        this.favoriteLanguage = favoriteLanguage;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -54,10 +52,21 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public String[] getOperatingSystem() {        return operatingSystem;
+    public String getEmail() {
+        return email;
     }
 
-    public void setOperatingSystem(String[] operatingSystem) {
-        this.operatingSystem = operatingSystem;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
