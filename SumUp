@@ -60,5 +60,7 @@ Metodo viduje prilyginame .value() mūsų sukurtam kintamajam,kuris naudojamas p
 metodo logika: jeigu theCode prasideda su mūsų anotacijos value, tuomet gražinam true. Jeigu result true, tuomet validacija praeita.
     Paleidus programą, pirmiausia nuskaitomas anotacijos message, o po to su juo value.
 
+Section 18 Introduction to hibernate
 
+Hibernate background'e naudoja jdbc. Palengvina komunikaciją tarp paleisto apps'o bei DB. Taip pat, hibernate suteikia object-to-relational mapping (ORM)
 
