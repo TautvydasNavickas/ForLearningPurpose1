@@ -1,5 +1,7 @@
 package com.example.demo.Entity;
 
+import com.example.demo.Validation.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -12,9 +14,17 @@ public class Customer {
     @Min(value = 0, message = "must be greater than or equal to zero")
     @Max(value = 10, message = "must be greater than or equal to 10")
     private Integer freePasses;
-
     @Pattern(regexp="^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
+    @CourseCode(value = "TOPS", message = "must start with TOPS")
+    private String courseCode;
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
 
     public String getPostalCode() {
         return postalCode;

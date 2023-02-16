@@ -9,13 +9,19 @@ public class CourseCodeConstraintValidator implements ConstraintValidator<Course
 
     @Override
     public void initialize(CourseCode constraintAnnotation) {
-       coursePrefix = constraintAnnotation.value();
+
+        coursePrefix = constraintAnnotation.value();
     }
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        boolean result = value.startsWith(coursePrefix);
-
+        boolean result;
+        if (value != null) {
+            result = value.startsWith(coursePrefix);
+        }
+        else {
+            result = true;
+        }
         return result;
     }
 }

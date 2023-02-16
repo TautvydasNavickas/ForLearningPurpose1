@@ -43,3 +43,22 @@ patikrinti ar not null, reikia naudoti Integer, o ne int. Norint apsisaugoti nuo
 override error klaidą į aiškesnę. Tam sukuriame messages.properties , kur pradžia typeMismatc(a must).
 Toliau spring-mvc-demo-servlet sukuriame bean ir kad skanuotų iš messages.properties.
 Norint įvesti Regular Expressions apribojimą - naudojame @Pattern ir regex.{} <- nurodytas skaičius nusako raidžių/skaičių kiekį.(pvz:(regexp="^[a-zA-Z0-9]{5}", message = "only 5 chars/digits"))
+
+Section 17 Spring MVC form validation - creating custom validation rules
+
+Kuriant anotaciją, prieš klasės pavadinimą uždedamas @interface, kuris nurodo, jog čia bus kuriamas custom annotation. Virš klasės nurodome anotaciją @Constraint ir nurodome klasę, kurioje yra mūsų validacijos logika (CourseCodeConstraintValidator).
+@Target anotacija naujodama tam, kad nurodyti kur pritaikyti šią anotaciją(skliausteliuose nurodome pvz: ElementType.method/field).
+@Retention anotacija naudojama tam, kad nurodyti kuomet turi veikti ši anotacija pvz RetentionPolicy.Runtime. <- nurodo kad veiks programos viso paleidimo metu.
+Kad nereikėtų hardcodint, nurodome default value ir message sukurdami metodus. Taip pat, galime nustatyti default groups, kuris sugrupuoja validacijos constraints.
+O default payloads metode galime nurodyti papildomą informaciją apie error.
+    Sukūrus anotaciją (žr. CourseCode), sukuriam helper class, kur yra validacijos logika. Šiuo atveju - CourseCodeConstraintValidator. Šioje klasėje implement'inam ConstrainValidator,
+kur<> nurodome mūsų anotaciją (CourseCode) ir data type, kurią validuosime. Gautųsi <CourseCode, String>.
+Tuomet atliekame ovveride initialize ir isValid metodų.
+    initialize metode paduodame mūsų anotaciją kaip argumentą. Šis metodas reikalinga inicializuoti anotaciją.
+Metodo viduje prilyginame .value() mūsų sukurtam kintamajam,kuris naudojamas patikrinti ar suvestas value praeina validaciją.
+    isValid kaip argumentus paduotas String theCode(HTML Form data entered by the user) ir constrainValidatorContext(helper class for additional error messages)
+metodo logika: jeigu theCode prasideda su mūsų anotacijos value, tuomet gražinam true. Jeigu result true, tuomet validacija praeita.
+    Paleidus programą, pirmiausia nuskaitomas anotacijos message, o po to su juo value.
+
+
+
