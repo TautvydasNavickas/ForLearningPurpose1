@@ -73,3 +73,8 @@ Section 20 Hibernate configuration with annotations
 @Entity yra java klasė, kuri yra susieta su duomenų bazės lentele. T.y, kad duomenis būtų galima perkelti ir gauti atgal to objekto.
 @Table(name = "") ir parašom pavadinimą lentelės. @Id anotacija reikalinga tam, kad parodyti jog field yra primary key. @Colum(name="") nurodome duomenų bazės atitinkamą stulpenį į kurį
 talpinsime to field informaciją.
+
+Section 21 Hibernate CRUD features
+Kaip create object ir nusiųsti į duomenų bazę žr. PrimaryKeyDemo. Pastebėjimas: .configure nebūtina nurodyti hibernate.cfg.xml pavadinimą, nes jis yra toks by default
+Jeigu nenurodysime kaip sukurti id, tuomet sukurs random primary key. Jeigu nurodome anotaciją @GeneratedValue(strategy = GenerationType.IDENTITY), tuomet primary key
+kurs pagal duomenų bazės parametrus. Taip pat, DB galima nurodyti nuo kurio id number pradėt skaičiuoti primary key (pvz ALTER TABLE hb_student_tracker.student AUTO_INCREMENT=3000).
