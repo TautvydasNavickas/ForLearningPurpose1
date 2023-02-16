@@ -75,6 +75,8 @@ Section 20 Hibernate configuration with annotations
 talpinsime to field informaciją.
 
 Section 21 Hibernate CRUD features
-Kaip create object ir nusiųsti į duomenų bazę žr. PrimaryKeyDemo. Pastebėjimas: .configure nebūtina nurodyti hibernate.cfg.xml pavadinimą, nes jis yra toks by default
+    Kaip create object ir nusiųsti į duomenų bazę žr. PrimaryKeyDemo. Pastebėjimas: .configure nebūtina nurodyti hibernate.cfg.xml pavadinimą, nes jis yra toks by default
 Jeigu nenurodysime kaip sukurti id, tuomet sukurs random primary key. Jeigu nurodome anotaciją @GeneratedValue(strategy = GenerationType.IDENTITY), tuomet primary key
 kurs pagal duomenų bazės parametrus. Taip pat, DB galima nurodyti nuo kurio id number pradėt skaičiuoti primary key (pvz ALTER TABLE hb_student_tracker.student AUTO_INCREMENT=3000).
+    GET naudojam .get metodą, kur galim nurodyti objekto .getId ar panašiai.(žr. ReadStudentDemo) Taip pat galim naudoti Querying Objects, kur naudojamas .createQuery
+ir rašoma sql užklausa. SVARBU: norint toliau naudoti užklausoje objektą, reikia sukurti jam alias, nes kitaip mes leak connection error. pvz from Student stu ....
