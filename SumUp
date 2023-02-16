@@ -82,3 +82,4 @@ session.getTransaction().commit() naudojam jeigu atliekamas veiksmas, kuris modi
     GET naudojam .get metodą, kur galim nurodyti objekto .getId ar panašiai.(žr. ReadStudentDemo) Taip pat galim naudoti Querying Objects, kur naudojamas .createQuery
 ir rašoma sql užklausa. SVARBU: norint toliau naudoti užklausoje objektą, reikia sukurti jam alias, nes kitaip mes leak connection error. pvz from Student stu ....
     UPDATE naudojam seterius arba Ouerying objects. Gale metodo reikia panaudoti .executeUpdate(). Taip pat, svarbu atlikti commit.
+    DELETE naudojam .delete komandą arba querying.
