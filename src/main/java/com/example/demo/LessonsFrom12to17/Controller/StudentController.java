@@ -1,11 +1,10 @@
-package com.example.demo.Controller;
+package com.example.demo.LessonsFrom12to17.Controller;
 
-import com.example.demo.Entity.Student;
+import com.example.demo.LessonsFrom12to17.Entity.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/student")

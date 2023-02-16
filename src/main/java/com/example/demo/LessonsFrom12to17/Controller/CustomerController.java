@@ -1,6 +1,6 @@
-package com.example.demo.Controller;
+package com.example.demo.LessonsFrom12to17.Controller;
 
-import com.example.demo.Entity.Customer;
+import com.example.demo.LessonsFrom12to17.Entity.Customer;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

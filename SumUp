@@ -67,3 +67,9 @@ Hibernate background'e naudoja jdbc. Palengvina komunikaciją tarp paleisto apps
 Section 19 Setting up hibernate development environment
 
 Connection name = DriverManager.getConnection(url, user, pass) <- naudojamas prisijungti prie mysql. Visgi, bus naudojamas hibernate.cfg.xml
+
+Section 20 Hibernate configuration with annotations
+
+@Entity yra java klasė, kuri yra susieta su duomenų bazės lentele. T.y, kad duomenis būtų galima perkelti ir gauti atgal to objekto.
+@Table(name = "") ir parašom pavadinimą lentelės. @Id anotacija reikalinga tam, kad parodyti jog field yra primary key. @Colum(name="") nurodome duomenų bazės atitinkamą stulpenį į kurį
+talpinsime to field informaciją.

@@ -1,6 +1,6 @@
-package com.example.demo.Entity;
+package com.example.demo.LessonsFrom12to17.Entity;
 
-import com.example.demo.Validation.CourseCode;
+import com.example.demo.LessonsFrom12to17.Validation.CourseCode;
 
 import javax.validation.constraints.*;
 
