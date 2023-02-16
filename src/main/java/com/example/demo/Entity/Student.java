@@ -5,15 +5,10 @@ import java.util.LinkedHashMap;
 public class Student {
 
     private String firstName;
-
-
-
     private String lastName;
     private String country;
     private LinkedHashMap<String ,String> optionsOfCountry;
-
     private String favoriteLanguage;
-
     private String[] operatingSystem;
     public Student() {
         optionsOfCountry = new LinkedHashMap<>();
