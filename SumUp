@@ -83,3 +83,10 @@ session.getTransaction().commit() naudojam jeigu atliekamas veiksmas, kuris modi
 ir rašoma sql užklausa. SVARBU: norint toliau naudoti užklausoje objektą, reikia sukurti jam alias, nes kitaip mes leak connection error. pvz from Student stu ....
     UPDATE naudojam seterius arba Ouerying objects. Gale metodo reikia panaudoti .executeUpdate(). Taip pat, svarbu atlikti commit.
     DELETE naudojam .delete komandą arba querying.
+
+Section 22 Hibernate advanced mappings
+Yra OneToOne, OneToMany, ManyToMany sąryšis
+Pirmary key (PK) yra,dažniausiai, unikalus skaičius ar skaičių kombinaciją tai eilutei. Foreign key (FK) id, kuris skirtas susieti su kita lentele. Cascade yra tuomet, kai
+tą pačią užklausą/operaciją pritaikai ne tik pagr. lentelei, bet ir susietai lentelei su pagr lentele. Žinoma, jeigu yra ManyToMany ryšys, tai cascade ne visada yra tinkamas.
+Cascade galima konfiguruoti. Fetch/retrieve data yra eager and lazy. Eager kuomet gauni visą informaciją, o lazy tik kuomet yra užklausa.
+Uni-Directional kuomet iš pagr. lentelės pasieki susietą lentelę. Bi-directional, kuomet iš pagr. lentelės pasieki susietą lentelę bei iš susietos lentelės gali pasiekti pagr.
