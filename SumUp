@@ -90,3 +90,13 @@ Pirmary key (PK) yra,dažniausiai, unikalus skaičius ar skaičių kombinaciją 
 tą pačią užklausą/operaciją pritaikai ne tik pagr. lentelei, bet ir susietai lentelei su pagr lentele. Žinoma, jeigu yra ManyToMany ryšys, tai cascade ne visada yra tinkamas.
 Cascade galima konfiguruoti. Fetch/retrieve data yra eager and lazy. Eager kuomet gauni visą informaciją, o lazy tik kuomet yra užklausa.
 Uni-Directional kuomet iš pagr. lentelės pasieki susietą lentelę. Bi-directional, kuomet iš pagr. lentelės pasieki susietą lentelę bei iš susietos lentelės gali pasiekti pagr.
+
+Section 23 hibernate advanced mappings - @OneToOne
+
+    Norint susieti dvi lenteles, reikia pagr. lentelėje turėti Foreign key. Foreign key, kitoje lentelėje bus primary key.
+    Entity lifecycle: Detach - jeigu detached, tuomet nėra asociajuojamas su Hibernate sesija. Merge - Jeigu buvo atjungas nuo sesijos
+tuomet vėl bus prijungtas prie sesijos. Persist - naujus entity perkelia į valdymo būsena. Toliau flush/commit išsaugos duomenų bazėje.
+Remove - Ištrina entity. Sekantis flush/ commit ištrins iš duomenų bazės. Refresh - Užkrauna objektą iš DB. Apsaugo nuo pasenusių duomenų.
+    Cascade tipai. Persist - jeigu entity buvo išsaugotas, tuomet susijęs entity irgi bus išsaugotas. Remove - jeigu entity buvo ištrintas, tuomet
+susijęs entity (kitoje lentelėje) irgi bus ištrintas. Refresh - abu susiję entity bus atnaujinti. Detach - jeigu vienas entity atjungtas nuo sesijos
+tada ir kitas entity atjungiamas nuo sesijos. Merge -  jeigu vienas entity merged tuomet susijęs entity irgi merged. All - visi prieš tai išvardinti tipai.
