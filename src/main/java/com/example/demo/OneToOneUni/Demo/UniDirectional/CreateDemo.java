@@ -27,7 +27,7 @@ public class CreateDemo {
             instructor1.setInstructorDetail(instructorDetail1);
 
             session.beginTransaction();
-            session.save(instructor1);
+            session.save(instructor);
             session.getTransaction().commit();
 
             System.out.println("Done");

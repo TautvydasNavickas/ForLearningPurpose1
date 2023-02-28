@@ -19,10 +19,12 @@ public class DeleteInstructorDetailDemo {
         try {
 
             session.beginTransaction();
-            int id = 1;
+            int id = 5;
             InstructorDetail instructorDetail = session.get(InstructorDetail.class, id);
             System.out.println("Instruction detail" + instructorDetail);
             System.out.println("Instructor" + instructorDetail.getInstructor());
+
+            instructorDetail.getInstructor().setInstructorDetail(null);
 
             session.delete(instructorDetail);
 
