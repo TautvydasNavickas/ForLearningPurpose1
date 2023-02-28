@@ -13,7 +13,7 @@ public class Instructor {
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
-    private String LastName;
+    private String lastName;
     @Column(name = "email")
     private String email;
     @OneToOne(cascade =CascadeType.ALL)
@@ -22,7 +22,7 @@ public class Instructor {
 
     public Instructor(String firstName, String lastName, String email) {
         this.firstName = firstName;
-        LastName = lastName;
+        this.lastName = lastName;
         this.email = email;
     }
 
@@ -47,11 +47,11 @@ public class Instructor {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        lastName = lastName;
     }
 
     public String getEmail() {
@@ -75,7 +75,7 @@ public class Instructor {
         return "Instructor{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
-                ", LastName='" + LastName + '\'' +
+                ", LastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", instructorDetail=" + instructorDetail +
                 '}';
