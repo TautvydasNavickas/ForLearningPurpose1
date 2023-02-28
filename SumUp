@@ -100,3 +100,5 @@ Remove - Ištrina entity. Sekantis flush/ commit ištrins iš duomenų bazės. R
     Cascade tipai. Persist - jeigu entity buvo išsaugotas, tuomet susijęs entity irgi bus išsaugotas. Remove - jeigu entity buvo ištrintas, tuomet
 susijęs entity (kitoje lentelėje) irgi bus ištrintas. Refresh - abu susiję entity bus atnaujinti. Detach - jeigu vienas entity atjungtas nuo sesijos
 tada ir kitas entity atjungiamas nuo sesijos. Merge -  jeigu vienas entity merged tuomet susijęs entity irgi merged. All - visi prieš tai išvardinti tipai.
+    Kuriant entity svarbu nurodyti relationship tarp lentelių uždedant anotacija virš klasės. Toliau viskas kuriama taip pat, tik tiek, kad kuriant pagr. lentelės
+FK atliekam set metodą.
