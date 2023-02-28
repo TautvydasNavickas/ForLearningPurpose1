@@ -102,3 +102,7 @@ susijęs entity (kitoje lentelėje) irgi bus ištrintas. Refresh - abu susiję e
 tada ir kitas entity atjungiamas nuo sesijos. Merge -  jeigu vienas entity merged tuomet susijęs entity irgi merged. All - visi prieš tai išvardinti tipai.
     Kuriant entity svarbu nurodyti relationship tarp lentelių uždedant anotacija virš klasės. Toliau viskas kuriama taip pat, tik tiek, kad kuriant pagr. lentelės
 FK atliekam set metodą.
+    Delete nesiskiria principu nuo create
+    Kuriant bi-directional, reikia secondary table nurodyti  @OneToOne(mappedBy = "secondary object name in primary",cascade type)
+Tuomet jeigu viename atliekamas pakeitimas, kad ir secondary, tai viskas persiduoda ir primary. Pakeitus cascade type ir, pavyzdžiui, panaikinus
+cascade delete, secondary išsitrins, bet priamry liks.
