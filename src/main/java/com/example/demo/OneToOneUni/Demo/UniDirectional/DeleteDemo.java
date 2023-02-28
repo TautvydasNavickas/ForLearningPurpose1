@@ -1,13 +1,12 @@
-package com.example.demo.OneToOneUni.Demo;
+package com.example.demo.OneToOneUni.Demo.UniDirectional;
 
-import com.example.demo.Entity.Student;
 import com.example.demo.OneToOneUni.Entity.Instructor;
 import com.example.demo.OneToOneUni.Entity.InstructorDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class CreateDemo {
+public class DeleteDemo {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -19,16 +18,14 @@ public class CreateDemo {
 
         try {
             Session session = factory.getCurrentSession();
-
-            Instructor instructor = new Instructor("Tautvydas", "Navickas", "taut.navickas@gmail.com");
-            InstructorDetail instructorDetail = new InstructorDetail("manoyoutube", "Lets go");
-            Instructor instructor1 = new Instructor("Simona", "Grybauskaite", "simona@gmail.com");
-            InstructorDetail instructorDetail1 = new InstructorDetail("youtube", "Blabla");
-            instructor.setInstructorDetail(instructorDetail);
-            instructor1.setInstructorDetail(instructorDetail1);
-
             session.beginTransaction();
-            session.save(instructor1);
+
+            int id = 3;
+            Instructor instructor = session.get(Instructor.class, id);
+            if (instructor != null) {
+                session.delete(instructor);
+            }
+
             session.getTransaction().commit();
 
             System.out.println("Done");
