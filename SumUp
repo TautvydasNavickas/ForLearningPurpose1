@@ -121,3 +121,5 @@ Tuomet naudoti informaciją iš joincolumn anotacijos surasti atitinkamą inform
 Geriausia rinktis lazy.
 Default setting for loading priklauso koks mapping pasirenkamas. OneToOne ir ManyToOne - Eager. OneToMany ir ManyToMany lazy.
 fetch tipą galim nurodyti parašę fetch= FetchType.
+   Galima lazy loading issue apeiti, kuomet prieš sesijos uždaryma yra paduodama užklausa. Tuomet informacija lieka kompiuterio atmintyje
+ir tą pačią informaciją galima gauti vėliau. Taip pat, glaima naudoti HQL query kaip FetchJoinDemo pavyzdyje. Užloadinama viskas.

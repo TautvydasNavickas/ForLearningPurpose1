@@ -7,8 +7,10 @@ import com.example.demo.EagerVsLazy.Entity.InstructorDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
-public class GetInstructorCoursesDemo {
+
+public class FetchJoinDemo {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -23,14 +25,16 @@ public class GetInstructorCoursesDemo {
             session.beginTransaction();
 
             int id = 1;
-            Instructor instructor = session.get(Instructor.class, id);
-
+            Query<Instructor> query = session.createQuery("select ins from Instructor ins JOIN FETCH ins.courseList where ins.id=:theInstructorId", Instructor.class);
+            query.setParameter("theInstructorId", id);
+            Instructor instructor = query.getSingleResult();
             System.out.println("va" + instructor);
-            System.out.println("va" + instructor.getCourseList());
-
 
             session.getTransaction().commit();
+            session.close();
 
+            System.out.println("\nSesion is closed\n");
+            System.out.println("va" + instructor.getCourseList());
             System.out.println("Done");
         } finally {
             session.close();
