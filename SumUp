@@ -100,9 +100,14 @@ Remove - Ištrina entity. Sekantis flush/ commit ištrins iš duomenų bazės. R
     Cascade tipai. Persist - jeigu entity buvo išsaugotas, tuomet susijęs entity irgi bus išsaugotas. Remove - jeigu entity buvo ištrintas, tuomet
 susijęs entity (kitoje lentelėje) irgi bus ištrintas. Refresh - abu susiję entity bus atnaujinti. Detach - jeigu vienas entity atjungtas nuo sesijos
 tada ir kitas entity atjungiamas nuo sesijos. Merge -  jeigu vienas entity merged tuomet susijęs entity irgi merged. All - visi prieš tai išvardinti tipai.
-    Kuriant entity svarbu nurodyti relationship tarp lentelių uždedant anotacija virš klasės. Toliau viskas kuriama taip pat, tik tiek, kad kuriant pagr. lentelės
-FK atliekam set metodą.
+    Kuriant entity svarbu nurodyti relationship tarp lentelių uždedant anotacija virš klasės.
     Delete nesiskiria principu nuo create
     Kuriant bi-directional, reikia secondary table nurodyti  @OneToOne(mappedBy = "secondary object name in primary",cascade type)
 Tuomet jeigu viename atliekamas pakeitimas, kad ir secondary, tai viskas persiduoda ir primary. Pakeitus cascade type ir, pavyzdžiui, panaikinus
 cascade delete, secondary išsitrins, bet priamry liks.
+    Papildymas: set metodas yra reikalingas tam, kad hibernate žinotų sąryšį tarp dviejų objektų. Sukūrus du objektus, vieno iš jo id bus foreign key. Priklauso kaip
+parašyta sql, kuriant lenteles.
+    Section 24 hibernate advanced mappings - @OneToMany
+    Čia svarbu nurodyti atitinkamai @OneToMany ir @ManyToOne. Dažniausiai, cascade delete nereikia, nes tuomet išsitrintų informacija iš abiejų lentelių.
+Taip pat, tokiam sąryše gali tekti sukurti ArrayList. mappedBy užklausa vyksta taip: hibernate ieško property klasėje, kurioje nurodyta ieškoti.
+Tuomet naudoti informaciją iš joincolumn anotacijos surasti atitinkamą informaciją.

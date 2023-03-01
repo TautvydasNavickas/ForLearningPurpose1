@@ -1,6 +1,4 @@
-package com.example.demo.OneToOneUni.Entity;
-
-import com.example.demo.OneToMany.Entity.Course;
+package com.example.demo.OneToMany.Entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -23,6 +21,8 @@ public class Instructor {
     @OneToOne(cascade =CascadeType.ALL)
     @JoinColumn(name = "instructor_detail_id")
     private InstructorDetail instructorDetail;
+    @OneToMany(mappedBy = "instructor", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    private List<Course> courseList;
 
     public Instructor(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -33,6 +33,15 @@ public class Instructor {
     public Instructor() {
 
     }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
+
     public int getId() {
         return id;
     }
@@ -71,6 +80,14 @@ public class Instructor {
 
     public void setInstructorDetail(InstructorDetail instructorDetail) {
         this.instructorDetail = instructorDetail;
+    }
+
+    public void add(Course tempCourse) {
+        if (courseList == null) {
+            courseList = new ArrayList<>();
+        }
+        courseList.add(tempCourse);
+        tempCourse.setInstructor(this);
     }
 
     @Override
