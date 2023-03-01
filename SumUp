@@ -85,6 +85,7 @@ ir rašoma sql užklausa. SVARBU: norint toliau naudoti užklausoje objektą, re
     DELETE naudojam .delete komandą arba querying.
 
 Section 22 Hibernate advanced mappings
+
 Yra OneToOne, OneToMany, ManyToMany sąryšis
 Pirmary key (PK) yra,dažniausiai, unikalus skaičius ar skaičių kombinaciją tai eilutei. Foreign key (FK) id, kuris skirtas susieti su kita lentele. Cascade yra tuomet, kai
 tą pačią užklausą/operaciją pritaikai ne tik pagr. lentelei, bet ir susietai lentelei su pagr lentele. Žinoma, jeigu yra ManyToMany ryšys, tai cascade ne visada yra tinkamas.
@@ -107,7 +108,16 @@ Tuomet jeigu viename atliekamas pakeitimas, kad ir secondary, tai viskas persidu
 cascade delete, secondary išsitrins, bet priamry liks.
     Papildymas: set metodas yra reikalingas tam, kad hibernate žinotų sąryšį tarp dviejų objektų. Sukūrus du objektus, vieno iš jo id bus foreign key. Priklauso kaip
 parašyta sql, kuriant lenteles.
+
     Section 24 hibernate advanced mappings - @OneToMany
+
     Čia svarbu nurodyti atitinkamai @OneToMany ir @ManyToOne. Dažniausiai, cascade delete nereikia, nes tuomet išsitrintų informacija iš abiejų lentelių.
 Taip pat, tokiam sąryše gali tekti sukurti ArrayList. mappedBy užklausa vyksta taip: hibernate ieško property klasėje, kurioje nurodyta ieškoti.
 Tuomet naudoti informaciją iš joincolumn anotacijos surasti atitinkamą informaciją.
+
+    Section 25 Hibernate advanced mappings - Eager vs Lazy loading
+
+    Eager užkrauna viską iškart, tačiau nukenčia performace. Tuo tarpu lazy užkrauna tik tada, kada paduodama užklausa.
+Geriausia rinktis lazy.
+Default setting for loading priklauso koks mapping pasirenkamas. OneToOne ir ManyToOne - Eager. OneToMany ir ManyToMany lazy.
+fetch tipą galim nurodyti parašę fetch= FetchType.
