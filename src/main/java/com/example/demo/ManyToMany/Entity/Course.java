@@ -1,6 +1,6 @@
 package com.example.demo.ManyToMany.Entity;
 
-import com.example.demo.Entity.Student;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
