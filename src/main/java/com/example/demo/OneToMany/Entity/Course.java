@@ -1,6 +1,8 @@
 package com.example.demo.OneToMany.Entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "course")
@@ -15,6 +17,10 @@ public class Course {
     @JoinColumn(name= "instructor_id")
     private Instructor instructor;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id")
+    private List<Review> reviewList;
+
     public Course() {
 
     }
@@ -23,6 +29,13 @@ public class Course {
         this.title = title;
     }
 
+    public List<Review> getReviewList() {
+        return reviewList;
+    }
+
+    public void setReviewList(List<Review> reviewList) {
+        this.reviewList = reviewList;
+    }
 
     public int getId() {
         return id;
@@ -48,6 +61,12 @@ public class Course {
         this.instructor = instructor;
     }
 
+    public void addReview(Review review) {
+        if(reviewList == null) {
+            reviewList = new ArrayList<>();
+        }
+        reviewList.add(review);
+    }
     @Override
     public String toString() {
         return "Course{" +
