@@ -2,7 +2,6 @@ package com.example.demo.LessonsFrom18to27.ManyToMany.Demo;
 
 
 import com.example.demo.LessonsFrom18to27.ManyToMany.Entity.*;
-import com.example.demo.ManyToMany.Entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
