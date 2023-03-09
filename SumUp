@@ -136,3 +136,7 @@ Jeigu sujungimas yra ManyToMany arba OneToOne, arba bi ManyToOne/OneToMany naudo
 ir kitos(inverse) lentelės pavadinimą.
     Pastebėjimas, kuomet nėra naudojamas cascade.all, reikia turėti omenyje, kad du entity reikia saugoti atskirai. To galima išvengti naudojant .persist komandą.
 
+    Section 28 Build a database web app - spring mvc and hibernate project part 1
+
+    Environment paruošimas projektui. Priminimas ateičiai: depedency suderinamumas yra svarbu tiek su spring versija, tiek su kitais depdency.
+Kitu atveju gali atsirasti error.
