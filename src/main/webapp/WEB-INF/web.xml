@@ -13,13 +13,10 @@
 	<!-- Step 1: Configure Spring MVC Dispatcher Servlet -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring-mvc-demo-servlet.xml</param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
+		<servlet-class>com.example.demo.Servlet</servlet-class>
+
 	</servlet>
+
 
 	<!-- Step 2: Set up URL mapping for Spring MVC Dispatcher Servlet -->
 	<servlet-mapping>
