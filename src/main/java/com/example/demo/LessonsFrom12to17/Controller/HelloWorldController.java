@@ -15,11 +15,11 @@ public class HelloWorldController {
 
     @RequestMapping("/showForm")
     public String showFrom(){
-        return  "helloworld-form";
+        return "PreviousLessons/helloworld-form";
     }
     @RequestMapping("/processForm")
     public String processForm(){
-        return "helloworld";
+        return "PreviousLessons/helloworld";
     }
     @RequestMapping("/processFormVersionTwo")
     public String letsShoutDude (HttpServletRequest request, Model model) {
@@ -30,7 +30,7 @@ public class HelloWorldController {
         model.addAttribute("message", result);
 
 
-        return "helloworld";
+        return "PreviousLessons/helloworld";
     }
 
     @RequestMapping("/processFormVersionThree")
@@ -41,7 +41,7 @@ public class HelloWorldController {
         model.addAttribute("message", result);
 
 
-        return "helloworld";
+        return "PreviousLessons/helloworld";
     }
 
 

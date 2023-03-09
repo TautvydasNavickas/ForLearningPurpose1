@@ -26,7 +26,7 @@ public class CustomerController {
     @RequestMapping("/showForm")
     public String showForm(Model model){
         model.addAttribute("customer", new Customer());
-        return "customer-form";
+        return "PreviousLessons/customer-form";
     }
 
     @RequestMapping("/processForm")
@@ -35,9 +35,9 @@ public class CustomerController {
             System.out.println("Last name: " + customer.getLastName() );
             System.out.println("Binding result: " + bindingResult );
             System.out.println("\n\n\n\n");
-            return "customer-form";
+            return "PreviousLessons/customer-form";
         } else {
-            return "customer-confirmation";
+            return "PreviousLessons/customer-confirmation";
         }
     }
 

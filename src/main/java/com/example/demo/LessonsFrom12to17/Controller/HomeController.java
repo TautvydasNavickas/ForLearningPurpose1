@@ -8,7 +8,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String showPage() {
-        return "main-menu";
+        return "PreviousLessons/main-menu";
     }
 
 

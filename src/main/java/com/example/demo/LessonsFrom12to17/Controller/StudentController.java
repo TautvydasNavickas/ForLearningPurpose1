@@ -15,13 +15,13 @@ public class StudentController {
         Student student = new Student();
         model.addAttribute("student", student);
 
-        return "student-form";
+        return "PreviousLessons/student-form";
     }
 
     @RequestMapping("/processForm")
     public String processForm(@ModelAttribute("student") Student student) {
         System.out.println("Student :" + student.getFirstName() + " and " + student.getLastName()+ " and " + student.getCountry()+ " and " + student.getOptionsOfCountry());
-        return "student-confirmation";
+        return "PreviousLessons/student-confirmation";
     }
 
 }
